@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.nav`
-  width: 100%;
+  max-width: 100%;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -55,6 +55,7 @@ const Menu = styled.li`
 `;
 
 const ScrollLine = styled(motion.div)`
+  max-width: 100%;
   height: 3px;
   background-color: #8809f6;
   transform-origin: left;
@@ -112,7 +113,10 @@ export default function Nav() {
         <Column></Column>
       </FlexContainer>
 
-      <ScrollLine style={{ scaleX: scrollYProgress }} />
+      <ScrollLine
+        style={{ scaleX: scrollYProgress }}
+        transition={{ type: "spring" }}
+      />
     </Wrapper>
   );
 }

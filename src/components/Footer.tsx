@@ -7,7 +7,7 @@ const Wrapper = styled.footer`
 `;
 
 const Container = styled.div`
-  width: 1260px;
+  max-width: 1260px;
   height: 100%;
   margin: 0 auto;
   background-color: skyblue; // !!!

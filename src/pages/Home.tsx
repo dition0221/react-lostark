@@ -1,4 +1,7 @@
+import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
+// API
+import { getNewsEvents } from "../api";
 
 const Wrapper = styled.main`
   height: 150vh; // !!!
@@ -17,27 +20,63 @@ const MainBackground = styled.div`
 `;
 
 const MainContainer = styled.div`
-  width: 1260px;
+  max-width: 1260px;
+  height: 508px;
   margin: 0 auto;
   position: relative;
   top: 396px;
   display: grid;
-  grid-template-columns: 890px 360px;
+  grid-template-columns: 89fr 36fr;
   gap: 10px;
 `;
 
-const Banner = styled.section`
-  background-color: red; // !!!
-  height: 508px;
+const Slider = styled.section`
+  /* background-color: yellow; // !!! */
 `;
 
+const SliderItem = styled.article``;
+
+const Banner = styled.section`
+  background-color: red; // !!!
+`;
+
+interface INewsEvents {
+  Title: string;
+  Thumbnail: string;
+  Link: string;
+  StartDate: string;
+  EndDate: string;
+  RewardDate: string | null;
+}
+
 export default function Home() {
+  // Slider
+  const { data } = useQuery<INewsEvents[]>({
+    queryKey: ["News", "Events"],
+    queryFn: getNewsEvents,
+  });
+
   return (
     <Wrapper>
       <MainBackground />
 
       <MainContainer>
-        <Banner>배너</Banner>
+        <Slider>
+          {data?.map((v) => (
+            <div
+              key={v.Title}
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url(${v.Thumbnail})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundColor: "rgba(0,0,0,0.7)",
+              }}
+            ></div>
+          ))}
+        </Slider>
         <Banner>배너</Banner>
       </MainContainer>
     </Wrapper>
