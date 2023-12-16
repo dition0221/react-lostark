@@ -1,13 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
-// API
-import { getNewsEvents } from "../api";
+// Components
+import MainBanner from "../components/MainBanner";
 
 const Wrapper = styled.main`
   height: 150vh; // !!!
   // Pull up by the height of <Nav>
   position: relative;
-  top: -83px;
+  top: -83px; // height of <Nav>
 `;
 
 const MainBackground = styled.div`
@@ -30,53 +29,17 @@ const MainContainer = styled.div`
   gap: 10px;
 `;
 
-const Slider = styled.section`
-  /* background-color: yellow; // !!! */
-`;
-
-const SliderItem = styled.article``;
-
 const Banner = styled.section`
   background-color: red; // !!!
 `;
 
-interface INewsEvents {
-  Title: string;
-  Thumbnail: string;
-  Link: string;
-  StartDate: string;
-  EndDate: string;
-  RewardDate: string | null;
-}
-
 export default function Home() {
-  // Slider
-  const { data } = useQuery<INewsEvents[]>({
-    queryKey: ["News", "Events"],
-    queryFn: getNewsEvents,
-  });
-
   return (
     <Wrapper>
       <MainBackground />
 
       <MainContainer>
-        <Slider>
-          {data?.map((v) => (
-            <div
-              key={v.Title}
-              style={{
-                width: "100%",
-                height: "100%",
-                backgroundImage: `url(${v.Thumbnail})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundColor: "rgba(0,0,0,0.7)",
-              }}
-            ></div>
-          ))}
-        </Slider>
+        <MainBanner />
         <Banner>배너</Banner>
       </MainContainer>
     </Wrapper>

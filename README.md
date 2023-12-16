@@ -6,4 +6,18 @@
 ---
 
 - **23-12-14 / Header + Nav(1)**
+  - Update
+    - Layout 설정
+    - [Header]
+    - [Nav] 우측의 로그인 버튼 구현 필요
 - **23-12-15 / Home Slider(1)**
+- **23-12-16 / Home Slider(2)**
+  - Issue
+    - 슬라이더의 버튼 기능을 하위 컴포넌트에서 구현 -> 상위 컴포넌트에서 사용 (스타일링 때문)
+  - To-Do: 슬라이더 자동 넘김 구현 (useEffect, setInterval)
+
+---
+
+- To-Do
+  1. News/Events의 데이터를 localStorage에 저장하여 불러오기
+     - 일주일 마다 데이터가 바뀔 수 있으니, 자주 fetch할 필요없음
