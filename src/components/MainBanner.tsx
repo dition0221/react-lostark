@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import styled from "styled-components";
+// APIs
 import { getNewsEvents } from "../api";
 // Components
-import Slider from "./Slider";
-import styled from "styled-components";
+import Slider from "@/components/Slider";
 
 const Wrapper = styled.section`
   position: relative;

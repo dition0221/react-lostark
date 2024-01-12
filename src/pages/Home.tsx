@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // Components
-import MainBanner from "../components/MainBanner";
+import MainBanner from "@/components/MainBanner";
 
 const Wrapper = styled.main`
   height: 150vh; // !!!

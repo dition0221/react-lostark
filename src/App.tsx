@@ -1,10 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // CSS
-import GlobalFont from "./styles/GlobalFont";
-import GlobalStyle from "./styles/GlobalStyle";
+import GlobalFont from "@/styles/GlobalFont";
+import GlobalStyle from "@/styles/GlobalStyle";
 // Router
-import Layout from "./Layout";
-import Home from "./pages/Home";
+import Layout from "@/Layout";
+import Home from "@/pages/Home";
 
 const router = createBrowserRouter([
   {
