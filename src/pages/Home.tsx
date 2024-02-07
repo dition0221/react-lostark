@@ -2,13 +2,6 @@ import styled from "styled-components";
 // Components
 import MainBanner from "@/components/MainBanner";
 
-const Wrapper = styled.main`
-  height: 150vh; // !!!
-  // Pull up by the height of <Nav>
-  position: relative;
-  top: -83px; // height of <Nav>
-`;
-
 const MainBackground = styled.div`
   width: 100%;
   height: 1000px;
@@ -35,13 +28,13 @@ const Banner = styled.section`
 
 export default function Home() {
   return (
-    <Wrapper>
+    <>
       <MainBackground />
 
       <MainContainer>
         <MainBanner />
         <Banner>배너</Banner>
       </MainContainer>
-    </Wrapper>
+    </>
   );
 }
