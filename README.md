@@ -18,6 +18,7 @@
 - **24-01-12 / Absolute path**
   - Update : import 문을 절대경로로 변경
     - <a href="https://velog.io/@hunmok1027/vite-%EC%97%90%EC%84%9C-%EC%A0%88%EB%8C%80%EA%B2%BD%EB%A1%9C-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0" target="_blank">참고 자료</a>
+- **24-02-07 / Home Slider(3)**
 
 ---
 
